@@ -1,0 +1,35 @@
+@font-face {
+    font-family: Roboto;
+    src: url("../assets/Roboto/static/Roboto-Regular.ttf");
+}
+
+.user-name {
+    display: flex;
+    flex-direction: column;
+    gap: 41px;
+
+}
+
+.greeting {
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 1.2rem
+}
+
+.greeting-name {
+    color: #FF0101;
+    font-size: 3rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.congratulations {
+    color: #000;
+    font-family: "Roboto";
+    font-size: 1.125rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
