@@ -11,9 +11,7 @@ export const logos = [icon1, icon2, icon3, icon4];
 
 export const copyright = "Copiryght, SportSee 2020";
 
-export const getApportNutritionnel = ({ user }) => {
-  console.log(user);
-  // const { calorieCount, carbohydrateCount, lipidCount, proteinCount } = user;
+export const getApportNutritionnel = ( user ) => {
   return [
     {
       name: "Calories",

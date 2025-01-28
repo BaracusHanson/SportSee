@@ -37,7 +37,7 @@ body {
     margin-top: 77px;
     width: 100%;
     height: calc(100% - 166px);
-    border: 1px solid #0712e5;
+    /* border: 1px solid #0712e5; */
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(2, calc(50% - 14px));
@@ -85,12 +85,35 @@ body {
 }
 
 .other {
-    background-color: aquamarine;
+    /* background-color: #e6e6e6; */
     height: 50%;
     display: grid;
     margin: 14px;
-    padding: 14px;
+    /* padding: 14px; */
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, 100%);
     border-radius: 5px;
     gap: 30px;
+}
+
+.AverageSessionChart {
+    border-radius: 5px;
+    background: #F00;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+    /* width: 100%; */
+}
+
+.IntensityChart {
+    border-radius: 5px;
+    background: #282D30;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+}
+
+.goal {
+    border-radius: 5px;
+    background: #e6e6e6;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

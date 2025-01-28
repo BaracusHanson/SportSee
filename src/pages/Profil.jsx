@@ -4,6 +4,10 @@ import Card from "../components/Card";
 import UserName from "../components/UserName";
 import { getApportNutritionnel } from "../utils/constants";
 import { fetchUserData } from "../utils/fetchUser";
+import AverageSessionChart from "../components/AverageSessionChart";
+import IntensityChart from "../components/IntensityChart";
+import GoalChart from "../components/GoalChart";
+
 
 const Profil = () => {
   const [user, setUser] = useState(null);
@@ -11,16 +15,22 @@ const Profil = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const user12 = await fetchUserData(12);
-      setUser(user12);
-      //  console.log(ok);
+      try {
+        const user12 = await fetchUserData(12);
+        setUser(user12);
+        if (user12?.keyData) {
+          const nutritionData = getApportNutritionnel(user12.keyData);
+          setApportNutritionnel(nutritionData);
+        }
+      } catch (error) {
+        console.error("Erreur lors du fetch des données utilisateur :", error);
+      }
     };
-    
+
     fetchData();
-  
   }, []);
-  // console.log(user);
-  console.log(user?.keyData);
+  console.log(user);
+
   if (!user) {
     return <div>Loading...</div>;
   }
@@ -33,7 +43,17 @@ const Profil = () => {
             <div className="dayly-activity">
               <ChartActivity data={user} />
             </div>
-            <div className="other"> others activite </div>
+            <div className="other">
+              <div className="AverageSessionChart">
+                <AverageSessionChart data={user.averageSessions} />
+              </div>
+              <div className="IntensityChart">
+                <IntensityChart data={user.performance} />
+              </div>
+              <div className="goal">
+                <GoalChart data={user.todayScore} />
+              </div>
+            </div>
           </div>
           <div className="troisAutres">
             <div className="card-container">
