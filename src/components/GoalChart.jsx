@@ -1,13 +1,14 @@
 import { RadialBarChart, RadialBar, ResponsiveContainer } from "recharts";
 import PropTypes from "prop-types";
-
+import "../styles/charts.css";
 function GoalChart({ data }) {
+  console.log(data);
   const score = data ? data : data;
   const dataArray = [{ name: "score", value: score }];
   return (
     <>
       <h3 className="chartgoal-title">Score</h3>
-      <ResponsiveContainer width="70%" height="70%">
+      <ResponsiveContainer width="100%" height="100%">
         <RadialBarChart
           innerRadius="0%"
           outerRadius="0%"
@@ -30,20 +31,17 @@ function GoalChart({ data }) {
           />
         </RadialBarChart>
       </ResponsiveContainer>
-      <div className="chartgoal-label center">
-        <p className="percent">
-          {data.score && data.score * 100}
-          {data.todayScore && data.todayScore * 100}%
-        </p>
-        <p>de votre</p>
-        <p>objectif</p>
+      <div className="goal-percent">
+        <p className="percent">{data * 100}%</p>
+        <p className="goal-text">de votre</p>
+        <p className="goal-text">objectif</p>
       </div>
     </>
   );
 }
 
 GoalChart.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.number.isRequired,
 };
 
 export default GoalChart;

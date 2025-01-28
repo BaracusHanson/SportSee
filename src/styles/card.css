@@ -6,15 +6,15 @@
 
 .card-article {
     border-radius: 5px;
-    background: #e6e6e6;
+    background: #f5f5f5;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
     /* width: 100%; */
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: left;
     align-items: center;
-    /* padding: 32px; */
-    gap: 20px ;
+    padding-left: 32px;
+    gap: 20px;
 }
 
 .card-image-container {

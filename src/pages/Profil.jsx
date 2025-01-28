@@ -41,10 +41,15 @@ const Profil = () => {
         <div className="dashboard-content">
           <div className="dashboard-activity">
             <div className="dayly-activity">
+              <h3 className="chartactivity-title">Activité quotidienne</h3>
               <ChartActivity data={user} />
             </div>
             <div className="other">
               <div className="AverageSessionChart">
+                      <h3 className="AverageSessionChart-title">
+                        Durée moyenne des <br />
+                        sessions
+                      </h3>
                 <AverageSessionChart data={user.averageSessions} />
               </div>
               <div className="IntensityChart">

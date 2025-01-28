@@ -15,9 +15,9 @@ function ChartActivity({ data }) {
 
   return (
     <>
-      <h3 className="chartactivity-title">Activité quotidienne</h3>
-      <ResponsiveContainer width="100%" height="95%" >
-        <BarChart data={activity} barSize={7} barGap={8}>
+    
+      <ResponsiveContainer width="100%" height="100%" >
+        <BarChart data={activity} barSize={8} barGap={9}>
           <CartesianGrid strokeDasharray="3" vertical={false} />
           <XAxis
             dataKey="day"
@@ -25,13 +25,13 @@ function ChartActivity({ data }) {
             tickLine={false}
             stroke="#DEDEDE"
             strokeWidth={2}
-            tickMargin={16}
+            tickMargin={18}
             tickFormatter={(day) => new Date(day).getDate()}
           />
           <YAxis
             yAxisId="kilogram"
             orientation="right"
-            tickMargin={30}
+            tickMargin={25}
             tick={{ fill: "#9B9EAC" }}
             tickLine={false}
             axisLine={false}
@@ -61,8 +61,8 @@ function ChartActivity({ data }) {
             verticalAlign="top"
             align="right"
             iconType="circle"
-            iconSize="10"
-            height={80}
+            iconSize="8"
+            height={60}
           />
         </BarChart>
       </ResponsiveContainer>

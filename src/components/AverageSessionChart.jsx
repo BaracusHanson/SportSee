@@ -7,6 +7,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 import PropTypes from "prop-types";
+import "../styles/charts.css";
 
 function AverageSessionChart({ data }) {
   const formatLabel = (value) => {
@@ -22,11 +23,8 @@ function AverageSessionChart({ data }) {
 
   return (
     <>
-      <ResponsiveContainer width="100%" height="70%" className={"center"}>
-        <h3 className="">
-          Durée moyenne des <br />
-          sessions
-        </h3>
+
+      <ResponsiveContainer width="100%" height="100%">
         <LineChart data={data}>
           <Line
             type="natural"

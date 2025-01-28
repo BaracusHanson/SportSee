@@ -1,0 +1,96 @@
+@font-face {
+    font-family: Roboto;
+    src: url("../assets/Roboto/static/Roboto-Regular.ttf");
+}
+
+
+.chartgoal-title {
+    position: absolute;
+    top: 24px;
+    left: 30px;
+    color: #20253A;
+    font-family: "Roboto", sans-serif;
+    font-size: .875rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    /* 160% */
+}
+
+.goal-percent {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+}
+
+.percent {
+    color: #282D30;
+    font-size: 1.625rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 26px;
+    text-align: center;
+}
+
+.goal-text {
+    color: #74798C;
+    font-family: "Roboto", sans-serif;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 26px;
+}
+
+.goal {
+    border-radius: 5px;
+    background: #f5f5f5;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.AverageSessionChart {
+    border-radius: 5px;
+    background: #F00;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+    position: relative;
+    padding: 14px;
+}
+
+.IntensityChart {
+    border-radius: 5px;
+    background: #282D30;
+    box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
+
+}
+
+.AverageSessionChart-title {
+    opacity: 0.504;
+    color: #FFF;
+    font-family: "Roboto";
+    font-size: .875rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    /* border: 1px solid #FFF; */
+    width: 147px;
+    position: absolute;
+    top: 24px;
+    left: 30px;
+
+}
+
+.chartactivity-title {
+    color: #20253A;
+    font-family: "Roboto", sans-serif;
+    font-size: .9rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+    position: absolute;
+    left: 32px;
+   
+}
