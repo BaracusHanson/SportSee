@@ -11,29 +11,33 @@ export const logos = [icon1, icon2, icon3, icon4];
 
 export const copyright = "Copiryght, SportSee 2020";
 
-export const apportNutritionnel = [
-  {
-    name: "Calories",
-    unit: "Kcal",
-    quantity: 0,
-    image: feu,
-  },
-  {
-    name: "Protéines",
-    unit: "g",
-    quantity: 0,
-    image: poulet,
-  },
-  {
-    name: "Glucides",
-    unit: "g",
-    quantity: 0,
-    image: pomme,
-  },
-  {
-    name: "Lipides",
-    unit: "g",
-    quantity: 0,
-    image: humburger,
-  },
-];
+export const getApportNutritionnel = ({ user }) => {
+  console.log(user);
+  // const { calorieCount, carbohydrateCount, lipidCount, proteinCount } = user;
+  return [
+    {
+      name: "Calories",
+      unit: "Kcal",
+      quantity: user.calorieCount,
+      image: feu,
+    },
+    {
+      name: "Protéines",
+      unit: "g",
+      quantity: user.proteinCount,
+      image: poulet,
+    },
+    {
+      name: "Glucides",
+      unit: "g",
+      quantity: user.carbohydrateCount,
+      image: pomme,
+    },
+    {
+      name: "Lipides",
+      unit: "g",
+      quantity: user.lipidCount,
+      image: humburger,
+    },
+  ];
+};

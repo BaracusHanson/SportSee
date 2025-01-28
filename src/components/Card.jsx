@@ -1,18 +1,28 @@
 import "../styles/card.css";
-import feu from "../assets/logo/feu.png";
+import PropTypes from "prop-types";
 
-const Card = () => {
-return (
-    <article className="card-article">
-        <div className="card-image-container">
-            <img src={feu} alt="" className="card-image" />
-        </div>
-        <div className="card-content">
-            <h2 className="card-calories">587kcal</h2>
-            <p className="card-text">calorie</p>
-        </div>
-    </article>
-);
+const Card = ({ apport }) => {
+    const { name, unit, quantity, image } = apport;
+    return (
+        <article className="card-article">
+            <div className="card-image-container">
+                <img src={image} alt="" className="card-image" />
+            </div>
+            <div className="card-content">
+                <h2 className="card-calories">{quantity}{unit}</h2>
+                <p className="card-text">{name}</p>
+            </div>
+        </article>
+    );
+};
+
+Card.propTypes = {
+    apport: PropTypes.shape({
+        name: PropTypes.string.isRequired,
+        unit: PropTypes.string.isRequired,
+        quantity: PropTypes.number.isRequired,
+        image: PropTypes.string.isRequired,
+    }).isRequired,
 };
 
 export default Card;

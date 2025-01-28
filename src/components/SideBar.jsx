@@ -12,8 +12,8 @@ const SideBar = () => {
             </li>
           ))}
         </ul>
-        <p className="sidebar-copyright">Copiryght, SportSee 2020</p>
       </div>
+        <p className="sidebar-copyright">Copiryght, SportSee 2020</p>
     </nav>
   );
 };
