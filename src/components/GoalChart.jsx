@@ -2,7 +2,7 @@ import { RadialBarChart, RadialBar, ResponsiveContainer } from "recharts";
 import PropTypes from "prop-types";
 import "../styles/charts.css";
 function GoalChart({ data }) {
-  console.log(data);
+  // console.log(data);
   const score = data ? data : data;
   const dataArray = [{ name: "score", value: score }];
   return (

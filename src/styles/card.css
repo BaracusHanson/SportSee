@@ -52,3 +52,17 @@
     font-weight: 500;
     line-height: 24px;
 }
+@media (max-width: 1024px){
+    .card-article {
+        padding-left: 20px;
+        gap: 10px;
+    }
+
+    .card-calories {
+        font-size: 1rem;
+    }
+
+    .card-text {
+        font-size: 0.75rem;
+    }
+}

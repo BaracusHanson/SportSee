@@ -8,8 +8,9 @@ import {
 } from "recharts";
 import PropTypes from "prop-types";
 import "../styles/charts.css";
+import AverageSessionTooltip from "./AverageSessionTooltip";
 
-function AverageSessionChart({ data }) {
+function AverageSessionChart({ data, setCoordinate }) {
   const formatLabel = (value) => {
     if (value === 1) return "L";
     if (value === 2) return "M";
@@ -23,9 +24,8 @@ function AverageSessionChart({ data }) {
 
   return (
     <>
-
       <ResponsiveContainer width="100%" height="100%">
-        <LineChart data={data}>
+        <LineChart data={data} margin={{ left: 20, right: 20, top: 40 }}>
           <Line
             type="natural"
             dataKey="sessionLength"
@@ -47,9 +47,12 @@ function AverageSessionChart({ data }) {
               fontSize: "0.75rem",
             }}
             tickFormatter={formatLabel}
-            tickMargin={20}
+            tickMargin={2}
           />
-          <Tooltip content={"<CustomToolTip />"} cursor={false} />
+          <Tooltip
+            content={<AverageSessionTooltip setCoordinate={setCoordinate} />}
+            cursor={false}
+          />
           <YAxis hide domain={["dataMin-10", "dataMax+10"]} />
           <defs>
             <linearGradient id="colorUv" x1="0%" y1="0" x2="100%" y2="0">
@@ -68,6 +71,7 @@ function AverageSessionChart({ data }) {
 
 AverageSessionChart.propTypes = {
   data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  setCoordinate: PropTypes.func.isRequired,
 };
 
 export default AverageSessionChart;

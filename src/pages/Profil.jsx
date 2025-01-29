@@ -7,16 +7,23 @@ import { fetchUserData } from "../utils/fetchUser";
 import AverageSessionChart from "../components/AverageSessionChart";
 import IntensityChart from "../components/IntensityChart";
 import GoalChart from "../components/GoalChart";
-
+import "../styles/index.css";
 
 const Profil = () => {
   const [user, setUser] = useState(null);
   const [apportNutritionnel, setApportNutritionnel] = useState([]);
+  const [coordinate, setCoordinate] = useState({});
+  // console.log(coordinate);
+
+  // const tooltipStyle = {
+  //   left: `${coordinate.x}px`,
+
+  // };
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const user12 = await fetchUserData(12);
+        const user12 = await fetchUserData(18);
         setUser(user12);
         if (user12?.keyData) {
           const nutritionData = getApportNutritionnel(user12.keyData);
@@ -29,7 +36,7 @@ const Profil = () => {
 
     fetchData();
   }, []);
-  console.log(user);
+  // console.log(user);
 
   if (!user) {
     return <div>Loading...</div>;
@@ -46,11 +53,15 @@ const Profil = () => {
             </div>
             <div className="other">
               <div className="AverageSessionChart">
-                      <h3 className="AverageSessionChart-title">
-                        Durée moyenne des <br />
-                        sessions
-                      </h3>
-                <AverageSessionChart data={user.averageSessions} />
+                <h3 className="AverageSessionChart-title">
+                  Durée moyenne des <br />
+                  sessions
+                </h3>
+                <div className="velvet" style={coordinate}></div>
+                <AverageSessionChart
+                  data={user.averageSessions}
+                  setCoordinate={setCoordinate}
+                />
               </div>
               <div className="IntensityChart">
                 <IntensityChart data={user.performance} />
