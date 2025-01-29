@@ -1,14 +1,15 @@
 import { RadialBarChart, RadialBar, ResponsiveContainer } from "recharts";
 import PropTypes from "prop-types";
 import "../styles/charts.css";
+import useResponsive from "../utils/useResponsive";
 function GoalChart({ data }) {
-  // console.log(data);
+ const isLargeScreen = useResponsive();
   const score = data ? data : data;
   const dataArray = [{ name: "score", value: score }];
   return (
     <>
       <h3 className="chartgoal-title">Score</h3>
-      <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer width="100%" height="100%"aspect={isLargeScreen ? .7 : 1}>
         <RadialBarChart
           innerRadius="0%"
           outerRadius="0%"
@@ -25,7 +26,7 @@ function GoalChart({ data }) {
           />
           <RadialBar
             dataKey="value"
-            barSize={10}
+            barSize={isLargeScreen ? 7 : 10}
             cornerRadius={100}
             fill="#FF0000"
           />

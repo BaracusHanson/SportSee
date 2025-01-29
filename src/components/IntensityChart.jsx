@@ -9,8 +9,11 @@ import {
 } from "recharts";
 import PropTypes from "prop-types";
 import "../styles/charts.css";
+import useResponsive from "../utils/useResponsive";
 
 function IntensityChart({ data }) {
+  const isLargeScreen = useResponsive();
+  // console.log(isLargeScreen);
   const renderPolarAngleAxis = ({ payload, x, y, cx, cy, ...rest }) => {
     const formatLabel = (value) => {
       if (value === "Energy") return "Energie";
@@ -27,7 +30,7 @@ function IntensityChart({ data }) {
         y={y + (y - cy) / 10}
         x={x + (x - cx) / 100}
         fill="#FFFFFF"
-        fontSize="0.75rem"
+        fontSize={isLargeScreen?"0.8rem":"0.75rem"}
       >
         {formatLabel(
           data.kind[payload.value].charAt(0).toUpperCase() +
@@ -39,7 +42,7 @@ function IntensityChart({ data }) {
 
   return (
     <>
-      <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer width="100%" height="100%" aspect={isLargeScreen ? .6 : 1}>
         <RadarChart outerRadius={90} data={[...data.data].reverse()}>
           <PolarGrid radialLines={false} />
           <PolarAngleAxis

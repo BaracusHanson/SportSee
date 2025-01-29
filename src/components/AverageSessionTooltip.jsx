@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
-
+import useResponsive from "../utils/useResponsive";
 function AverageSessionTooltip({ active, payload, setCoordinate, coordinate }) {
+  const isLargeScreen = useResponsive();
   if (active && payload && payload.length) {
     setCoordinate({
       left: `${coordinate.x}px`,
@@ -8,7 +9,9 @@ function AverageSessionTooltip({ active, payload, setCoordinate, coordinate }) {
     });
     return (
       <div className="AverageSessionTooltip">
-        <p>{`${payload[0].value}min`}</p>
+        <p
+          style={{ fontSize: isLargeScreen ? 16 : 8 }}
+        >{`${payload[0].value}min`}</p>
       </div>
     );
   }

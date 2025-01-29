@@ -10,14 +10,19 @@ import {
 } from "recharts";
 import PropTypes from "prop-types";
 import ActivityToolTip from "./ActivityToolTip";
+import useResponsive from "../utils/useResponsive";
 
 function ChartActivity({ data }) {
   const { activity } = data;
-
+  const isLargeScreen = useResponsive();
   return (
     <>
       <ResponsiveContainer width="100%" height="100%">
-        <BarChart data={activity} barSize={8} barGap={9}>
+        <BarChart
+          data={activity}
+          barSize={isLargeScreen ? 7 : 8}
+          barGap={isLargeScreen ? 11 : 9}
+        >
           <CartesianGrid strokeDasharray="2" vertical={false} />
           <XAxis
             dataKey="day"
@@ -63,9 +68,14 @@ function ChartActivity({ data }) {
             align="right"
             iconType="circle"
             iconSize="8"
-            height={60}
+            height={isLargeScreen ? 50 : 60}
             formatter={(value) => (
-              <span style={{ color: "#74798C" }} className="activity_titleChart">{value}</span>
+              <span
+                style={{ color: "#74798C" }}
+                className="activity_titleChart"
+              >
+                {value}
+              </span>
             )}
           />
         </BarChart>

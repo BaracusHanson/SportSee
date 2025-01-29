@@ -190,8 +190,10 @@
 
     .intro {
         font-size: .5rem;
+        /* font-weight: 600; */
         line-height: 20px;
         height: 20px;
+        /* padding: 0 5px; */
     }
 
     .AverageSessionTooltip {
@@ -202,5 +204,36 @@
     .activity_titleChart {
         font-size: .75rem;
         line-height: 20px;
+    }
+
+    .AverageSessionChart,
+    .IntensityChart,
+    .goal {
+        /* border: 1px solid rgb(0, 55, 255); */
+        height: 206px;
+    }
+
+    .chartgoal-title {
+        position: absolute;
+        top: 12px;
+        left: 15px;
+        font-size: .875rem;
+        font-style: normal;
+        line-height: 24px;
+    }
+
+    .goal-percent {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%);
+    }
+
+    .percent {
+        font-size: 1.2rem;
+    }
+
+    .goal-text {
+        font-size: .8rem;
     }
 }
