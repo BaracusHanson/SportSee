@@ -101,6 +101,10 @@ body {
 
 
 @media (max-width: 1024px) {
+    .troisAutres {
+        margin: 14px 0;
+    }
+
     .dashboard {
         padding: 34px 45px 30px 55px;
         background-color: #fff;
@@ -110,7 +114,7 @@ body {
         margin-top: 38px;
     }
 
-  
+
 
     /* .dayly-activity, */
     .other {
