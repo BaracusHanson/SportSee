@@ -14,7 +14,6 @@
     font-style: normal;
     font-weight: 600;
     line-height: 24px;
-    /* 160% */
 }
 
 .goal-percent {
@@ -57,7 +56,6 @@
     background: #F00;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.02);
     position: relative;
-    /* padding: 14px; */
     overflow: hidden;
 }
 
@@ -76,7 +74,6 @@
     font-style: normal;
     font-weight: 500;
     line-height: 24px;
-    /* border: 1px solid #FFF; */
     width: 147px;
     position: absolute;
     top: 24px;
@@ -107,7 +104,6 @@
     align-items: center;
     gap: 7px;
     padding-top: 4px;
-    /* margin-left: 8px; */
 }
 
 .intro {
@@ -116,9 +112,7 @@
     font-family: "Roboto", sans-serif;
     font-size: .6rem;
     line-height: 24px;
-    /* width: 26px; */
     height: 24px;
-    /* border: 1px solid #FFF; */
 }
 
 .velvet {
@@ -128,12 +122,8 @@
     width: 100%;
     height: 100%;
     background: #000;
-    /* border-radius: 5px; */
     opacity: 0.0975;
     border: 1px solid #000;
-    /* margin-left: 20px; */
-
-
 }
 
 .AverageSessionTooltip {
@@ -190,10 +180,8 @@
 
     .intro {
         font-size: .5rem;
-        /* font-weight: 600; */
         line-height: 20px;
         height: 20px;
-        /* padding: 0 5px; */
     }
 
     .AverageSessionTooltip {
@@ -209,7 +197,6 @@
     .AverageSessionChart,
     .IntensityChart,
     .goal {
-        /* border: 1px solid rgb(0, 55, 255); */
         height: 206px;
     }
 

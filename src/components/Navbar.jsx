@@ -1,6 +1,7 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logo from "../assets/brand.png";
 import "../styles/Navbar.css";
+
 const Navbar = () => {
   return (
     <nav className="navbar">
@@ -10,24 +11,44 @@ const Navbar = () => {
       </div>
       <ul className="navbar-menu">
         <li className="navbar-item">
-          <Link to="/" className="navbar-link">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? "navbar-link-active" : "navbar-link"
+            }
+          >
             Accueil
-          </Link>
+          </NavLink>
         </li>
         <li className="navbar-item">
-          <Link to="/profil" className="navbar-link">
+          <NavLink
+            to="/profil"
+            className={({ isActive }) =>
+              isActive ? "navbar-link-active" : "navbar-link"
+            }
+          >
             Profil
-          </Link>
+          </NavLink>
         </li>
         <li className="navbar-item">
-          <Link to="/setting" className="navbar-link">
+          <NavLink
+            to="/setting"
+            className={({ isActive }) =>
+              isActive ? "navbar-link-active" : "navbar-link"
+            }
+          >
             Réglages
-          </Link>
+          </NavLink>
         </li>
         <li className="navbar-item">
-          <Link to="/community" className="navbar-link">
+          <NavLink
+            to="/community"
+            className={({ isActive }) =>
+              isActive ? "navbar-link-active" : "navbar-link"
+            }
+          >
             Communauté
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </nav>

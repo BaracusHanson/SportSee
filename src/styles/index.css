@@ -84,21 +84,38 @@ body {
     background-color: #f5f5f5;
     border-radius: 5px;
     position: relative;
-    /* border: 1px solid red; */
 }
 
 .other {
-    /* background-color: #e6e6e6; */
     height: 50%;
     display: grid;
     margin: 14px;
-    /* padding: 14px; */
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(1, 100%);
     border-radius: 5px;
     gap: 30px;
 }
 
+.chargement {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 2rem;
+    width: calc(100% - 117px);
+    height: calc(100vh - 91px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: capitalize;
+    color: #323232;
+}
+
+.helps{
+    padding-top: 25px;
+    font-size: 12px;
+    color: #9d9d9d;
+}
 
 @media (max-width: 1024px) {
     .troisAutres {
@@ -114,9 +131,6 @@ body {
         margin-top: 38px;
     }
 
-
-
-    /* .dayly-activity, */
     .other {
 
         gap: 10px;

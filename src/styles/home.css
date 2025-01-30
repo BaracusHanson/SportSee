@@ -1,0 +1,79 @@
+@font-face {
+    font-family: Roboto;
+    src: url("../assets/Roboto/static/Roboto-Regular.ttf");
+}
+
+.home_para,
+.home_title {
+    font-family: "Roboto", sans-serif;
+    text-transform: capitalize;
+    color: #282D30;
+    text-align: center;
+}
+
+.home_title {
+    font-size: 2.5rem;
+}
+
+.user-selection-form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.user-selection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.user-option {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #e6e6e6;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border: none;
+}
+.user-option:focus{
+    border: 1px solid #8bc34a;
+}
+
+.userButton {
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+    overflow: hidden;
+    cursor: pointer;
+
+}
+
+.userImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profilButtonActive {
+    font-family: "Roboto", sans-serif;
+    margin-top: 30px;
+    background-color: #8bc34a;
+    color: #FFF;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: capitalize;
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    width: 300px;
+}
