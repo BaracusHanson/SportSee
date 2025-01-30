@@ -1,3 +1,12 @@
+/**
+ * Setting component renders the settings page.
+ *
+ * @component
+ * @example
+ * return (
+ *   <Setting />
+ * )
+ */
 const Setting = () => {
   return (
     <div className="Page">

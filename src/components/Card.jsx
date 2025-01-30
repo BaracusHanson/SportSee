@@ -1,3 +1,15 @@
+/**
+ * Card component to display nutritional information.
+ *
+ * @component
+ * @param {Object} props - Component props.
+ * @param {Object} props.apport - Nutritional information.
+ * @param {string} props.apport.name - Name of the nutrient.
+ * @param {string} props.apport.unit - Unit of measurement.
+ * @param {number} props.apport.quantity - Quantity of the nutrient.
+ * @param {string} props.apport.image - URL of the image representing the nutrient.
+ * @returns {JSX.Element} The rendered Card component.
+ */
 import "../styles/card.css";
 import PropTypes from "prop-types";
 

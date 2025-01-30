@@ -2,6 +2,17 @@ import { NavLink } from "react-router-dom";
 import logo from "../assets/brand.png";
 import "../styles/Navbar.css";
 
+/**
+ * Navbar component that renders the navigation bar for the SportSee application.
+ * 
+ * @component
+ * @example
+ * return (
+ *   <Navbar />
+ * )
+ * 
+ * @returns {JSX.Element} The rendered navigation bar component.
+ */
 const Navbar = () => {
   return (
     <nav className="navbar">

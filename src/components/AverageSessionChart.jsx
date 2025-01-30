@@ -10,6 +10,14 @@ import PropTypes from "prop-types";
 import "../styles/charts.css";
 import AverageSessionTooltip from "./AverageSessionTooltip";
 
+/**
+ * AverageSessionChart component renders a line chart displaying average session lengths over a week.
+ *
+ * @component
+ * @param {Object} props - The component props.
+ * @param {Array} props.data - The data to be displayed in the chart. Each object in the array should have a `day` and `sessionLength` property.
+ * @param {Function} props.setCoordinate - A function to set the coordinates for the tooltip.
+ */
 function AverageSessionChart({ data, setCoordinate }) {
   const formatLabel = (value) => {
     if (value === 1) return "L";

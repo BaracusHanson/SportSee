@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: pages/Profil.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: pages/Profil.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import { useEffect, useState } from "react";
+import ChartActivity from "../components/ActivityChart";
+import Card from "../components/Card";
+import UserName from "../components/UserName";
+import { getApportNutritionnel } from "../utils/constants";
+import AverageSessionChart from "../components/AverageSessionChart";
+import IntensityChart from "../components/IntensityChart";
+import GoalChart from "../components/GoalChart";
+import "../styles/index.css";
+import PropTypes from "prop-types";
+
+/**
+ * Profil component displays the user's dashboard with various charts and nutritional information.
+ *
+ * @param {Object} props - The component props.
+ * @param {Object} props.user - The user data object.
+ * @param {Object} props.user.keyData - The key nutritional data of the user.
+ * @param {Array} props.user.averageSessions - The average session data of the user.
+ * @param {Object} props.user.performance - The performance data of the user.
+ * @param {number} props.user.todayScore - The today's score of the user.
+ *
+ * @returns {JSX.Element} The rendered Profil component.
+ */
+const Profil = ({ user }) => {
+  const [apportNutritionnel, setApportNutritionnel] = useState([]);
+  const [coordinate, setCoordinate] = useState({});
+  useEffect(() => {
+    const fetchData = async () => {
+      if (user?.keyData) {
+        const nutritionData = getApportNutritionnel(user.keyData);
+        setApportNutritionnel(nutritionData);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  return (
+    &lt;div className="Page">
+      {!user ? (
+        &lt;div className="chargement">
+          &lt;p>aucun utilisateur sélectionné !&lt;/p>
+          &lt;p className="helps">vous devez selectionner un utilisateur pour visialiser son dashboard&lt;/p>
+        &lt;/div>
+      ) : (
+        &lt;section className="dashboard">
+          &lt;UserName data={user} />
+          &lt;div className="dashboard-content">
+            &lt;div className="dashboard-activity">
+              &lt;div className="dayly-activity">
+                &lt;h3 className="chartactivity-title">Activité quotidienne&lt;/h3>
+                &lt;ChartActivity data={user} />
+              &lt;/div>
+              &lt;div className="other">
+                &lt;div className="AverageSessionChart">
+                  &lt;h3 className="AverageSessionChart-title">
+                    Durée moyenne des &lt;br />
+                    sessions
+                  &lt;/h3>
+                  &lt;div className="velvet" style={coordinate}>&lt;/div>
+                  &lt;AverageSessionChart
+                    data={user.averageSessions}
+                    setCoordinate={setCoordinate}
+                  />
+                &lt;/div>
+                &lt;div className="IntensityChart">
+                  &lt;IntensityChart data={user.performance} />
+                &lt;/div>
+                &lt;div className="goal">
+                  &lt;GoalChart data={user.todayScore} />
+                &lt;/div>
+              &lt;/div>
+            &lt;/div>
+            &lt;div className="troisAutres">
+              &lt;div className="card-container">
+                {apportNutritionnel.map((apport, index) => {
+                  return (
+                    &lt;Card
+                      key={index}
+                      apport={apport}
+                      nutriments={user?.keyData}
+                    />
+                  );
+                })}
+              &lt;/div>
+            &lt;/div>
+          &lt;/div>
+        &lt;/section>
+      )}
+    &lt;/div>
+  );
+};
+Profil.propTypes = {
+  user: PropTypes.object,
+};
+export default Profil;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#App">App</a></li><li><a href="global.html#AverageSessionChart">AverageSessionChart</a></li><li><a href="global.html#ChartActivity">ChartActivity</a></li><li><a href="global.html#Community">Community</a></li><li><a href="global.html#GoalChart">GoalChart</a></li><li><a href="global.html#Home">Home</a></li><li><a href="global.html#IntensityChart">IntensityChart</a></li><li><a href="global.html#Navbar">Navbar</a></li><li><a href="global.html#Profil">Profil</a></li><li><a href="global.html#Setting">Setting</a></li><li><a href="global.html#SideBar">SideBar</a></li><li><a href="global.html#UserName">UserName</a></li><li><a href="global.html#fetchUserData">fetchUserData</a></li><li><a href="global.html#getApportNutritionnel">getApportNutritionnel</a></li><li><a href="global.html#useResponsive">useResponsive</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.4</a> on Thu Jan 30 2025 17:51:30 GMT+0100 (heure normale d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

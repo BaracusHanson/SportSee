@@ -9,6 +9,23 @@ import SideBar from "./components/SideBar";
 import { useEffect, useState } from "react";
 import { fetchUserData } from "./utils/fetchUser";
 
+/**
+ * App component that sets up the main application structure with routing.
+ * 
+ * @component
+ * @returns {JSX.Element} The rendered component.
+ * 
+ * @example
+ * return (
+ *   <App />
+ * )
+ * 
+ * @description
+ * The App component initializes the user state and userId state. It fetches user data based on the userId and sets the user state accordingly. The component uses React Router for navigation between different routes: Home, Profil, Setting, and Community.
+ * 
+ * @function
+ * @name App
+ */
 function App() {
   const [user, setUser] = useState(null);
   const [userId, setUserId] = useState(null);

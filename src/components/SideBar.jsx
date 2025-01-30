@@ -1,6 +1,17 @@
 import "../styles/sideBar.css";
 import { logos } from "../utils/constants";
 
+/**
+ * SideBar component renders a navigation sidebar with a list of logos and a copyright notice.
+ *
+ * @component
+ * @example
+ * return (
+ *   <SideBar />
+ * )
+ *
+ * @returns {JSX.Element} The rendered component.
+ */
 const SideBar = () => {
   return (
     <nav className="sidebar">

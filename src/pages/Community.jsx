@@ -1,3 +1,12 @@
+/**
+ * Community component renders the Community page.
+ *
+ * @component
+ * @example
+ * return (
+ *   <Community />
+ * )
+ */
 const Community = () => {
   return (
     <div className="Page">

@@ -1,3 +1,13 @@
+/**
+ * ActivityToolTip component displays a tooltip with activity data.
+ *
+ * @component
+ * @param {Object} props - The component props.
+ * @param {boolean} props.active - Indicates if the tooltip is active.
+ * @param {Array} props.payload - The data to be displayed in the tooltip.
+ * @param {Object} props.payload[].value - The value of the data point.
+ * @returns {JSX.Element|null} The rendered tooltip or null if inactive.
+ */
 import PropTypes from "prop-types";
 
 const ActivityToolTip = ({ active, payload }) => {

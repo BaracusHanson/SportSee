@@ -1,5 +1,21 @@
 const apiUrl = "http://localhost:3000/user/";
 
+/**
+ * Fetches user data from the API and combines it into a single object.
+ *
+ * @param {string} userId - The ID of the user to fetch data for.
+ * @returns {Promise<Object>} A promise that resolves to an object containing the combined user data.
+ * @throws {Error} Throws an error if the network response is not ok or if there is a problem with the fetch operation.
+ *
+ * @property {Object} userInfos - The user's information.
+ * @property {number} todayScore - The user's score for today.
+ * @property {Object} keyData - The user's key data.
+ * @property {Array} activity - The user's activity sessions.
+ * @property {Array} averageSessions - The user's average sessions.
+ * @property {Object} performance - The user's performance data.
+ * @property {Object} performance.kind - The kind of performance data.
+ * @property {Array} performance.data - The performance data.
+ */
 export async function fetchUserData(userId) {
   try {
     const [userRes, activityRes, averageSessionsRes, performanceRes] = await Promise.all([

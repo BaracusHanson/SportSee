@@ -2,6 +2,14 @@ import { RadialBarChart, RadialBar, ResponsiveContainer } from "recharts";
 import PropTypes from "prop-types";
 import "../styles/charts.css";
 import useResponsive from "../utils/useResponsive";
+/**
+ * GoalChart component renders a radial bar chart to display the user's score.
+ *
+ * @component
+ * @param {Object} props - The component props.
+ * @param {number} props.data - The score data to be displayed in the chart.
+ * @returns {JSX.Element} The rendered GoalChart component.
+ */
 function GoalChart({ data }) {
  const isLargeScreen = useResponsive();
   const score = data ? data : data;

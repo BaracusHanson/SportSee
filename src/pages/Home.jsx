@@ -5,8 +5,18 @@ import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+/**
+ * Home component allows users to select a profile and navigate to the profile page.
+ *
+ * @param {Object} props - The component props.
+ * @param {Function} props.setUserId - Function to set the user ID.
+ * @param {Object} props.user - The user object containing user information.
+ * @param {Object} props.user.userInfos - The user information object.
+ * @param {string} props.user.userInfos.firstName - The first name of the user.
+ *
+ * @returns {JSX.Element} The rendered Home component.
+ */
 const Home = ({ setUserId, user }) => {
-  // console.log(user.userInfos.firstName);
   const [name, setName] = useState();
   const navigate = useNavigate();
   useEffect(() => {

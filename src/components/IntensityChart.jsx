@@ -11,6 +11,16 @@ import PropTypes from "prop-types";
 import "../styles/charts.css";
 import useResponsive from "../utils/useResponsive";
 
+/**
+ * IntensityChart component renders a radar chart displaying various intensity metrics.
+ *
+ * @param {Object} props - The component props.
+ * @param {Object} props.data - The data to be displayed in the chart.
+ * @param {Array} props.data.data - The array of data points for the chart.
+ * @param {Object} props.data.kind - The mapping of data kinds to their labels.
+ *
+ * @returns {JSX.Element} The rendered IntensityChart component.
+ */
 function IntensityChart({ data }) {
   const isLargeScreen = useResponsive();
   // console.log(isLargeScreen);

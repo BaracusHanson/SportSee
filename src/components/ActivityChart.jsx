@@ -12,6 +12,18 @@ import PropTypes from "prop-types";
 import ActivityToolTip from "./ActivityToolTip";
 import useResponsive from "../utils/useResponsive";
 
+/**
+ * ChartActivity component renders a bar chart displaying activity data.
+ *
+ * @param {Object} props - The component props.
+ * @param {Object} props.data - The data object containing activity information.
+ * @param {Array} props.data.activity - The array of activity data objects.
+ * @param {string} props.data.activity[].day - The day of the activity.
+ * @param {number} props.data.activity[].kilogram - The weight in kilograms.
+ * @param {number} props.data.activity[].calories - The calories burned.
+ *
+ * @returns {JSX.Element} The rendered bar chart component.
+ */
 function ChartActivity({ data }) {
   const { activity } = data;
   const isLargeScreen = useResponsive();

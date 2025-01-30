@@ -9,6 +9,18 @@ import GoalChart from "../components/GoalChart";
 import "../styles/index.css";
 import PropTypes from "prop-types";
 
+/**
+ * Profil component displays the user's dashboard with various charts and nutritional information.
+ *
+ * @param {Object} props - The component props.
+ * @param {Object} props.user - The user data object.
+ * @param {Object} props.user.keyData - The key nutritional data of the user.
+ * @param {Array} props.user.averageSessions - The average session data of the user.
+ * @param {Object} props.user.performance - The performance data of the user.
+ * @param {number} props.user.todayScore - The today's score of the user.
+ *
+ * @returns {JSX.Element} The rendered Profil component.
+ */
 const Profil = ({ user }) => {
   const [apportNutritionnel, setApportNutritionnel] = useState([]);
   const [coordinate, setCoordinate] = useState({});
