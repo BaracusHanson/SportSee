@@ -1,5 +1,5 @@
 import "../styles/sideBar.css";
-import { logos } from "../utils/constants";
+import { logos } from "/public/utils/constants.js";
 
 /**
  * SideBar component renders a navigation sidebar with a list of logos and a copyright notice.

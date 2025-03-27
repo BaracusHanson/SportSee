@@ -10,7 +10,7 @@
  * @returns {JSX.Element|null} The rendered tooltip component or null if inactive.
  */
 import PropTypes from "prop-types";
-import useResponsive from "../utils/useResponsive";
+import useResponsive from "/public/utils/useResponsive.js";
 function AverageSessionTooltip({ active, payload, setCoordinate, coordinate }) {
   const isLargeScreen = useResponsive();
   if (active && payload && payload.length) {

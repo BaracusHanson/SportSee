@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ChartActivity from "../components/ActivityChart";
 import Card from "../components/Card";
 import UserName from "../components/UserName";
-import { getApportNutritionnel } from "../utils/constants";
+import { getApportNutritionnel } from "/public/utils/constants.js";
 import AverageSessionChart from "../components/AverageSessionChart";
 import IntensityChart from "../components/IntensityChart";
 import GoalChart from "../components/GoalChart";

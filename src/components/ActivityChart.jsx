@@ -10,7 +10,7 @@ import {
 } from "recharts";
 import PropTypes from "prop-types";
 import ActivityToolTip from "./ActivityToolTip";
-import useResponsive from "../utils/useResponsive";
+import useResponsive from "/public/utils/useResponsive.js";
 
 /**
  * ChartActivity component renders a bar chart displaying activity data.

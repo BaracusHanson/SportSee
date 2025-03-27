@@ -1,7 +1,7 @@
 import { RadialBarChart, RadialBar, ResponsiveContainer } from "recharts";
 import PropTypes from "prop-types";
 import "../styles/charts.css";
-import useResponsive from "../utils/useResponsive";
+import useResponsive from "/public/utils/useResponsive.js";
 /**
  * GoalChart component renders a radial bar chart to display the user's score.
  *

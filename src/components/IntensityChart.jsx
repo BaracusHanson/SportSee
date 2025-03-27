@@ -9,7 +9,7 @@ import {
 } from "recharts";
 import PropTypes from "prop-types";
 import "../styles/charts.css";
-import useResponsive from "../utils/useResponsive";
+import useResponsive from "/public/utils/useResponsive.js";
 
 /**
  * IntensityChart component renders a radar chart displaying various intensity metrics.
