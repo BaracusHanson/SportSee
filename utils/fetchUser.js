@@ -64,7 +64,7 @@ export async function fetchUserData(userId) {
 export async function fetchUserDataFromMock(userId) {
   try {
     // Récupération du fichier JSON depuis le dossier public
-    const response = await fetch('/DataMock.json');
+    const response = await fetch('./DataMock.json');
 
     if (!response.ok) {
       throw new Error('Erreur lors de la récupération des données depuis DataMock.json');
